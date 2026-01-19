@@ -1,0 +1,26 @@
+<section id="contact" class="section contact">
+  <div class="container">
+    <div class="contact-card reveal" style="--delay: 0s;">
+      <div class="contact-copy">
+        <p class="eyebrow">Contact</p>
+        <h2>Ready to build your next platform?</h2>
+        <p class="section-subtitle">
+          Open to software engineering opportunities, platform modernization work, and fintech collaborations.
+        </p>
+        <a class="button button-solid" href="mailto:rahulgsde@gmail.com">Start a conversation</a>
+      </div>
+      <div class="contact-grid">
+        <a
+          class="contact-item"
+          *ngFor="let item of contacts"
+          [href]="item.href"
+          [attr.target]="item.external ? '_blank' : null"
+          [attr.rel]="item.external ? 'noreferrer' : null"
+        >
+          <span class="contact-label">{{ item.label }}</span>
+          <span class="contact-value">{{ item.value }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

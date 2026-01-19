@@ -1,0 +1,42 @@
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.project-card {
+  padding: 2rem;
+  border-radius: 24px;
+  background: rgba(20, 28, 38, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 1rem;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.project-link {
+  color: var(--accent);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.project-description {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.project-outcomes {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+  display: grid;
+  gap: 0.5rem;
+}

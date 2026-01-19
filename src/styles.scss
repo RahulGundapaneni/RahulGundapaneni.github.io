@@ -1,1 +1,147 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Onest:wght@400;500;600&display=swap');
+
+:root {
+  --font-display: 'Unbounded', sans-serif;
+  --font-body: 'Onest', sans-serif;
+  --text-strong: #f4f7fb;
+  --text-muted: #c8d0da;
+  --text-soft: #8c98a6;
+  --accent: #2ed3b7;
+  --accent-warm: #ffb347;
+  --paper: #0b0f14;
+  --paper-deep: #0f141a;
+  --surface: #141b24;
+  --shadow-soft: 0 28px 60px rgba(3, 8, 18, 0.45);
+  --header-height: 88px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-strong);
+  background: radial-gradient(circle at 12% 8%, rgba(46, 211, 183, 0.18), transparent 48%),
+    radial-gradient(circle at 90% 10%, rgba(255, 179, 71, 0.15), transparent 45%),
+    linear-gradient(180deg, #0b0f14 0%, #0c121a 45%, #0b0f14 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4.5rem 0;
+  scroll-margin-top: var(--header-height);
+}
+
+.section-header {
+  max-width: 720px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--accent-warm);
+  margin-bottom: 0.75rem;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--text-soft);
+  margin: 0 0 0.75rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-solid {
+  background: linear-gradient(135deg, var(--accent), #57f1da);
+  color: #0b1218;
+  box-shadow: 0 14px 28px rgba(46, 211, 183, 0.3);
+}
+
+.button-ghost {
+  background: transparent;
+  border-color: rgba(46, 211, 183, 0.4);
+  color: var(--text-strong);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(46, 211, 183, 0.3);
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: rgba(46, 211, 183, 0.12);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: rise 0.8s ease forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}

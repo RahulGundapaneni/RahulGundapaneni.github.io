@@ -1,0 +1,24 @@
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-header reveal" style="--delay: 0s;">
+      <p class="eyebrow">Projects</p>
+      <h2>Selected GitHub projects</h2>
+      <p class="section-subtitle">A curated set of repos highlighting backend systems, front-end delivery, and applied ML.</p>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card reveal" *ngFor="let project of projects; let i = index" [style.--delay]="(i + 1) * 0.1 + 's'">
+        <div class="project-header">
+          <h3>{{ project.name }}</h3>
+          <a class="project-link" [href]="project.link" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+        <p class="project-description">{{ project.description }}</p>
+        <ul class="project-outcomes">
+          <li *ngFor="let outcome of project.outcomes">{{ outcome }}</li>
+        </ul>
+        <div class="tag-row">
+          <span class="tag" *ngFor="let item of project.stack">{{ item }}</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(12, 18, 26, 0.9);
+}
+
+.footer-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
+}
+
+.footer-links {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.footer-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

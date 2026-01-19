@@ -1,0 +1,26 @@
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-header reveal" style="--delay: 0s;">
+      <p class="eyebrow">Experience</p>
+      <h2>Delivering measurable impact in fintech and higher education</h2>
+      <p class="section-subtitle">
+        End-to-end ownership of platforms that accelerate onboarding, detect fraud, and modernize mission-critical
+        systems.
+      </p>
+    </div>
+    <div class="timeline">
+      <article class="timeline-card reveal" *ngFor="let item of experiences; let i = index" [style.--delay]="(i + 1) * 0.1 + 's'">
+        <div class="timeline-header">
+          <div>
+            <h3>{{ item.role }}</h3>
+            <p class="timeline-meta">{{ item.company }} - {{ item.location }}</p>
+          </div>
+          <span class="timeline-period">{{ item.period }}</span>
+        </div>
+        <ul>
+          <li *ngFor="let highlight of item.highlights">{{ highlight }}</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

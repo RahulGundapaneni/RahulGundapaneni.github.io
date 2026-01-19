@@ -1,0 +1,26 @@
+.education-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.education-card {
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(20, 28, 38, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-soft);
+}
+
+.education-school {
+  color: var(--text-muted);
+  margin: 0.5rem 0 1.5rem;
+}
+
+.education-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

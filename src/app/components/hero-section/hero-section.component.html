@@ -1,0 +1,44 @@
+<section id="home" class="section hero">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal" style="--delay: 0s;">
+      <h1>Rahul Gundapaneni</h1>
+      <p class="eyebrow">Software Development Engineer</p>
+      <p class="lead">
+        Building resilient fintech platforms across credit origination, fraud prevention, and real-time risk
+        analytics. I partner with teams to modernize systems, automate compliance, and ship secure, scalable
+        customer experiences.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-solid" href="#projects">View projects</a>
+        <a class="button button-ghost" href="mailto:rahulgsde@gmail.com">Let&#39;s talk</a>
+      </div>
+      <div class="hero-focus">
+        <p class="label">Focus areas</p>
+        <ul>
+          <li *ngFor="let focus of focusAreas">{{ focus }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero-card reveal" style="--delay: 0.15s;">
+      <div class="profile-card">
+        <h3>Current impact</h3>
+        <p>
+          Delivering end-to-end credit card origination and fraud mitigation capabilities at Citizens Financial
+          Group while improving onboarding speed and regulatory compliance.
+        </p>
+        <div class="badge-grid">
+          <span class="badge">Angular + Node.js</span>
+          <span class="badge">Spring Boot</span>
+          <span class="badge">AWS</span>
+          <span class="badge">Okta OAuth2</span>
+        </div>
+      </div>
+      <div class="metric-grid">
+        <div class="metric" *ngFor="let metric of metrics">
+          <h4>{{ metric.value }}</h4>
+          <p>{{ metric.label }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
