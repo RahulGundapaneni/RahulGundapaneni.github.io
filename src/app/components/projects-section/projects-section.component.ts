@@ -10,11 +10,10 @@ interface ProjectItem {
 }
 
 @Component({
-  selector: 'app-projects-section',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './projects-section.component.html',
-  styleUrl: './projects-section.component.scss'
+    selector: 'app-projects-section',
+    imports: [CommonModule],
+    templateUrl: './projects-section.component.html',
+    styleUrl: './projects-section.component.scss'
 })
 export class ProjectsSectionComponent {
   projects: ProjectItem[] = [

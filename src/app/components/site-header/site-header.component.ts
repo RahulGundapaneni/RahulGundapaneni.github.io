@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-site-header',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './site-header.component.html',
-  styleUrl: './site-header.component.scss'
+    selector: 'app-site-header',
+    imports: [CommonModule],
+    templateUrl: './site-header.component.html',
+    styleUrl: './site-header.component.scss'
 })
 export class SiteHeaderComponent {
   navLinks = [

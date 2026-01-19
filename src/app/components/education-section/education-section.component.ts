@@ -9,11 +9,10 @@ interface EducationItem {
 }
 
 @Component({
-  selector: 'app-education-section',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './education-section.component.html',
-  styleUrl: './education-section.component.scss'
+    selector: 'app-education-section',
+    imports: [CommonModule],
+    templateUrl: './education-section.component.html',
+    styleUrl: './education-section.component.scss'
 })
 export class EducationSectionComponent {
   education: EducationItem[] = [

@@ -9,11 +9,10 @@ interface ContactItem {
 }
 
 @Component({
-  selector: 'app-contact-section',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './contact-section.component.html',
-  styleUrl: './contact-section.component.scss'
+    selector: 'app-contact-section',
+    imports: [CommonModule],
+    templateUrl: './contact-section.component.html',
+    styleUrl: './contact-section.component.scss'
 })
 export class ContactSectionComponent {
   contacts: ContactItem[] = [

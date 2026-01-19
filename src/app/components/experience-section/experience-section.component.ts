@@ -10,11 +10,10 @@ interface ExperienceItem {
 }
 
 @Component({
-  selector: 'app-experience-section',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './experience-section.component.html',
-  styleUrl: './experience-section.component.scss'
+    selector: 'app-experience-section',
+    imports: [CommonModule],
+    templateUrl: './experience-section.component.html',
+    styleUrl: './experience-section.component.scss'
 })
 export class ExperienceSectionComponent {
   experiences: ExperienceItem[] = [

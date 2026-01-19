@@ -9,19 +9,18 @@ import { SiteHeaderComponent } from './components/site-header/site-header.compon
 import { SkillsSectionComponent } from './components/skills-section/skills-section.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    SiteHeaderComponent,
-    HeroSectionComponent,
-    ExperienceSectionComponent,
-    ProjectsSectionComponent,
-    SkillsSectionComponent,
-    EducationSectionComponent,
-    ContactSectionComponent,
-    SiteFooterComponent
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [
+        SiteHeaderComponent,
+        HeroSectionComponent,
+        ExperienceSectionComponent,
+        ProjectsSectionComponent,
+        SkillsSectionComponent,
+        EducationSectionComponent,
+        ContactSectionComponent,
+        SiteFooterComponent
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {}
