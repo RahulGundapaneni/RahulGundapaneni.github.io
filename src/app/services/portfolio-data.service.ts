@@ -201,30 +201,30 @@ export class PortfolioDataService {
 
   private skills: Skill[] = [
     // Languages (5)
-    { name: 'Java', category: 'language', proficiency: 'expert', level: 95, icon: '☕' },
-    { name: 'TypeScript', category: 'language', proficiency: 'expert', level: 92, icon: '🔷' },
-    { name: 'JavaScript', category: 'language', proficiency: 'expert', level: 90, icon: '⚡' },
-    { name: 'Python', category: 'language', proficiency: 'advanced', level: 85, icon: '🐍' },
-    { name: 'SQL', category: 'language', proficiency: 'expert', level: 88, icon: '📊' },
+    { name: 'Java', category: 'language', proficiency: 'expert', level: 95, iconUrl: 'assets/skill-icons/java.svg' },
+    { name: 'TypeScript', category: 'language', proficiency: 'expert', level: 92, iconUrl: 'assets/skill-icons/typescript.svg' },
+    { name: 'JavaScript', category: 'language', proficiency: 'expert', level: 90, iconUrl: 'assets/skill-icons/javascript.svg' },
+    { name: 'Python', category: 'language', proficiency: 'advanced', level: 85, iconUrl: 'assets/skill-icons/python.svg' },
+    { name: 'SQL', category: 'language', proficiency: 'expert', level: 88, iconUrl: 'assets/skill-icons/sql.svg' },
 
     // Frameworks (4)
-    { name: 'Angular', category: 'framework', proficiency: 'expert', level: 93, icon: '⬡' },
-    { name: 'React', category: 'framework', proficiency: 'advanced', level: 87, icon: '⚛️' },
-    { name: 'Spring Boot', category: 'framework', proficiency: 'expert', level: 94, icon: '🍃' },
-    { name: 'Node.js', category: 'framework', proficiency: 'advanced', level: 86, icon: '💚' },
+    { name: 'Angular', category: 'framework', proficiency: 'expert', level: 93, iconUrl: 'assets/skill-icons/angular.svg' },
+    { name: 'React', category: 'framework', proficiency: 'advanced', level: 87, iconUrl: 'assets/skill-icons/react.svg' },
+    { name: 'Spring Boot', category: 'framework', proficiency: 'expert', level: 94, iconUrl: 'assets/skill-icons/springboot.svg' },
+    { name: 'Node.js', category: 'framework', proficiency: 'advanced', level: 86, iconUrl: 'assets/skill-icons/nodejs.svg' },
 
     // Cloud & DevOps (4)
-    { name: 'AWS', category: 'cloud', proficiency: 'expert', level: 91, icon: '☁️' },
-    { name: 'Docker', category: 'cloud', proficiency: 'advanced', level: 88, icon: '🐳' },
-    { name: 'Kubernetes', category: 'cloud', proficiency: 'advanced', level: 84, icon: '⚙️' },
-    { name: 'CI/CD', category: 'cloud', proficiency: 'expert', level: 90, icon: '🔄' },
+    { name: 'AWS', category: 'cloud', proficiency: 'expert', level: 91, iconUrl: 'assets/skill-icons/aws.svg' },
+    { name: 'Docker', category: 'cloud', proficiency: 'advanced', level: 88, iconUrl: 'assets/skill-icons/docker.svg' },
+    { name: 'Kubernetes', category: 'cloud', proficiency: 'advanced', level: 84, iconUrl: 'assets/skill-icons/kubernetes.svg' },
+    { name: 'CI/CD', category: 'cloud', proficiency: 'expert', level: 90, iconUrl: 'assets/skill-icons/cicd.svg' },
 
     // Databases (5)
-    { name: 'PostgreSQL', category: 'database', proficiency: 'expert', level: 92, icon: '🐘' },
-    { name: 'MySQL', category: 'database', proficiency: 'expert', level: 90, icon: '🐬' },
-    { name: 'SQL Server', category: 'database', proficiency: 'expert', level: 89, icon: '📊' },
-    { name: 'MongoDB', category: 'database', proficiency: 'advanced', level: 85, icon: '🍃' },
-    { name: 'Redis', category: 'database', proficiency: 'advanced', level: 83, icon: '⚡' },
+    { name: 'PostgreSQL', category: 'database', proficiency: 'expert', level: 92, iconUrl: 'assets/skill-icons/postgresql.svg' },
+    { name: 'MySQL', category: 'database', proficiency: 'expert', level: 90, iconUrl: 'assets/skill-icons/mysql.svg' },
+    { name: 'SQL Server', category: 'database', proficiency: 'expert', level: 89, iconUrl: 'assets/skill-icons/sqlserver.svg' },
+    { name: 'MongoDB', category: 'database', proficiency: 'advanced', level: 85, iconUrl: 'assets/skill-icons/mongodb.svg' },
+    { name: 'Redis', category: 'database', proficiency: 'advanced', level: 83, iconUrl: 'assets/skill-icons/redis.svg' },
   ];
 
   private certifications: Certification[] = [

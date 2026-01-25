@@ -18,7 +18,8 @@ export interface Skill {
   category: 'language' | 'framework' | 'cloud' | 'database' | 'tool';
   proficiency: 'expert' | 'advanced' | 'intermediate';
   level?: number; // Percentage from 0-100
-  icon?: string; // Emoji or icon name
+  icon?: string; // Emoji fallback
+  iconUrl?: string; // Brand icon URL
 }
 
 export interface Experience {

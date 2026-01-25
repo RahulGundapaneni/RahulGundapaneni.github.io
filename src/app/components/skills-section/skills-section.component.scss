@@ -71,6 +71,17 @@
   font-size: 18px;
   display: inline-flex;
   align-items: center;
+  line-height: 1;
+}
+
+.skill-icon-image {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.skill-icon-text {
+  font-size: 18px;
 }
 
 .skill-tag.language {
