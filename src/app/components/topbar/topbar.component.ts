@@ -17,6 +17,8 @@ export class TopbarComponent implements OnInit, OnDestroy {
   @Input({ required: true }) navLinks: NavLink[] = [];
   activeSection: string = 'home';
   private observer: IntersectionObserver | null = null;
+  private sectionRatios = new Map<string, number>();
+  isMenuOpen = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
@@ -24,6 +26,7 @@ export class TopbarComponent implements OnInit, OnDestroy {
     if (!isPlatformBrowser(this.platformId) || typeof IntersectionObserver === 'undefined') {
       return;
     }
+    this.activeSection = this.getSectionFromHash() ?? this.activeSection;
     setTimeout(() => this.setupIntersectionObserver(), 100);
   }
 
@@ -33,6 +36,29 @@ export class TopbarComponent implements OnInit, OnDestroy {
     }
   }
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+
+  onNavClick(href: string) {
+    const sectionId = href.replace('#', '');
+    this.activeSection = sectionId || 'home';
+    this.closeMenu();
+  }
+
+  private getSectionFromHash(): string | null {
+    if (typeof window === 'undefined') {
+      return null;
+    }
+    const hash = window.location.hash || '';
+    const sectionId = hash.replace('#', '');
+    return sectionId || null;
+  }
+
   private setupIntersectionObserver() {
     const options = {
       threshold: [0, 0.25, 0.5, 0.75, 1],
@@ -40,14 +66,17 @@ export class TopbarComponent implements OnInit, OnDestroy {
     };
 
     this.observer = new IntersectionObserver((entries) => {
-      // Find the section with the highest intersection ratio
-      let maxRatio = 0;
-      let activeId = 'home';
-
       entries.forEach((entry) => {
-        if (entry.intersectionRatio > maxRatio) {
-          maxRatio = entry.intersectionRatio;
-          activeId = entry.target.id || 'home';
+        const id = entry.target.id || 'home';
+        this.sectionRatios.set(id, entry.intersectionRatio);
+      });
+
+      let maxRatio = 0;
+      let activeId = this.activeSection;
+      this.sectionRatios.forEach((ratio, id) => {
+        if (ratio > maxRatio) {
+          maxRatio = ratio;
+          activeId = id;
         }
       });
 
@@ -60,6 +89,7 @@ export class TopbarComponent implements OnInit, OnDestroy {
     const sectionIds = ['home', 'skills', 'experience', 'projects', 'contact'];
     sectionIds.forEach((sectionId) => {
       const section = document.getElementById(sectionId);
+      this.sectionRatios.set(sectionId, 0);
       if (section && this.observer) {
         this.observer.observe(section);
       }
