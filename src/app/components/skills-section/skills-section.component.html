@@ -13,7 +13,13 @@
         <div class="skill-tags">
           @for (skill of languages; track skill.name) {
             <span class="skill-tag language" [title]="skill.name">
-              <span class="skill-icon">{{ skill.icon }}</span>
+              <span class="skill-icon" aria-hidden="true">
+                @if (skill.iconUrl) {
+                  <img class="skill-icon-image" [src]="skill.iconUrl" [alt]="skill.name + ' logo'">
+                } @else {
+                  <span class="skill-icon-text">{{ skill.icon }}</span>
+                }
+              </span>
               {{ skill.name }}
             </span>
           }
@@ -25,7 +31,13 @@
         <div class="skill-tags">
           @for (skill of frameworks; track skill.name) {
             <span class="skill-tag framework" [title]="skill.name">
-              <span class="skill-icon">{{ skill.icon }}</span>
+              <span class="skill-icon" aria-hidden="true">
+                @if (skill.iconUrl) {
+                  <img class="skill-icon-image" [src]="skill.iconUrl" [alt]="skill.name + ' logo'">
+                } @else {
+                  <span class="skill-icon-text">{{ skill.icon }}</span>
+                }
+              </span>
               {{ skill.name }}
             </span>
           }
@@ -37,7 +49,13 @@
         <div class="skill-tags">
           @for (skill of cloudTools.slice(0, 6); track skill.name) {
             <span class="skill-tag cloud" [title]="skill.name">
-              <span class="skill-icon">{{ skill.icon }}</span>
+              <span class="skill-icon" aria-hidden="true">
+                @if (skill.iconUrl) {
+                  <img class="skill-icon-image" [src]="skill.iconUrl" [alt]="skill.name + ' logo'">
+                } @else {
+                  <span class="skill-icon-text">{{ skill.icon }}</span>
+                }
+              </span>
               {{ skill.name }}
             </span>
           }
@@ -49,7 +67,13 @@
         <div class="skill-tags">
           @for (skill of databases.slice(0, 5); track skill.name) {
             <span class="skill-tag database" [title]="skill.name">
-              <span class="skill-icon">{{ skill.icon }}</span>
+              <span class="skill-icon" aria-hidden="true">
+                @if (skill.iconUrl) {
+                  <img class="skill-icon-image" [src]="skill.iconUrl" [alt]="skill.name + ' logo'">
+                } @else {
+                  <span class="skill-icon-text">{{ skill.icon }}</span>
+                }
+              </span>
               {{ skill.name }}
             </span>
           }
