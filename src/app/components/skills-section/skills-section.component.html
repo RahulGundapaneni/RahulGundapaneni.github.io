@@ -1,15 +1,58 @@
-<section id="skills" class="section">
-  <div class="container">
-    <div class="section-header reveal" style="--delay: 0s;">
-      <p class="eyebrow">Skills</p>
-      <h2>Stack aligned to modern, regulated platforms</h2>
-      <p class="section-subtitle">A balanced toolkit across backend systems, web applications, and cloud infrastructure.</p>
+<section id="skills" class="skills">
+  <div class="skills-container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">Skills & Expertise</h2>
+      <p class="section-subtitle">
+        Technologies and tools I work with
+      </p>
     </div>
-    <div class="skills-grid">
-      <div class="skills-card reveal" *ngFor="let group of groups; let i = index" [style.--delay]="(i + 1) * 0.1 + 's'">
-        <h3>{{ group.title }}</h3>
-        <div class="tag-row">
-          <span class="tag" *ngFor="let item of group.items">{{ item }}</span>
+
+    <div class="skills-categories">
+      <div class="skill-category fade-in delay-100">
+        <h3 class="category-title">Languages</h3>
+        <div class="skill-tags">
+          @for (skill of languages; track skill.name) {
+            <span class="skill-tag language" [title]="skill.name">
+              <span class="skill-icon">{{ skill.icon }}</span>
+              {{ skill.name }}
+            </span>
+          }
+        </div>
+      </div>
+
+      <div class="skill-category fade-in delay-200">
+        <h3 class="category-title">Frameworks</h3>
+        <div class="skill-tags">
+          @for (skill of frameworks; track skill.name) {
+            <span class="skill-tag framework" [title]="skill.name">
+              <span class="skill-icon">{{ skill.icon }}</span>
+              {{ skill.name }}
+            </span>
+          }
+        </div>
+      </div>
+
+      <div class="skill-category fade-in delay-300">
+        <h3 class="category-title">Cloud & DevOps</h3>
+        <div class="skill-tags">
+          @for (skill of cloudTools.slice(0, 6); track skill.name) {
+            <span class="skill-tag cloud" [title]="skill.name">
+              <span class="skill-icon">{{ skill.icon }}</span>
+              {{ skill.name }}
+            </span>
+          }
+        </div>
+      </div>
+
+      <div class="skill-category fade-in delay-400">
+        <h3 class="category-title">Databases</h3>
+        <div class="skill-tags">
+          @for (skill of databases.slice(0, 5); track skill.name) {
+            <span class="skill-tag database" [title]="skill.name">
+              <span class="skill-icon">{{ skill.icon }}</span>
+              {{ skill.name }}
+            </span>
+          }
         </div>
       </div>
     </div>

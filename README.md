@@ -1,27 +1,91 @@
-# Portfolio
+# Rahul Gundapaneni - Portfolio Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Personal portfolio website showcasing my work as a Senior Software Engineer specializing in fintech platforms, microservices architecture, and cloud-native solutions.
 
-## Development server
+## 🚀 Live Website
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Visit: [rahulgundapaneni.github.io](https://rahulgundapaneni.github.io)
 
-## Code scaffolding
+## 💼 About
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This portfolio highlights my experience building enterprise financial platforms, fraud detection systems, and scalable cloud applications. With 8+ years of experience at companies like Citizens Financial Group, University of Texas at Arlington, and Morgan Stanley, I specialize in:
 
-## Build
+- **Backend Development**: Java, Spring Boot, Node.js
+- **Frontend Development**: Angular, React, TypeScript
+- **Cloud & DevOps**: AWS, Docker, Kubernetes, CI/CD
+- **Databases**: PostgreSQL, MySQL, SQL Server, MongoDB, Redis
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🛠️ Tech Stack
 
-## Running unit tests
+- **Framework**: Angular 20.3.16
+- **Language**: TypeScript 5.8.3
+- **Styling**: SCSS
+- **Server**: Express.js with SSR (Server-Side Rendering)
+- **Build Tool**: Angular CLI
+- **Deployment**: GitHub Pages
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📂 Project Structure
 
-## Running end-to-end tests
+```
+src/
+├── app/
+│   ├── components/          # Standalone components
+│   │   ├── hero/           # Hero section with intro
+│   │   ├── skills-section/ # Technical skills display
+│   │   ├── projects-section/ # Featured projects
+│   │   ├── contact-section/ # Contact form
+│   │   ├── topbar/         # Navigation header
+│   │   └── site-footer/    # Footer
+│   ├── models/             # TypeScript interfaces
+│   ├── services/           # Data services
+│   └── app.component.ts    # Root component
+├── styles.scss             # Global styles
+└── index.html             # Entry point
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🚀 Development
 
-## Further help
+### Prerequisites
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Node.js (v18 or higher)
+- Angular CLI (`npm install -g @angular/cli`)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+
+# Run tests
+npm test
+```
+
+Visit `http://localhost:4200/` for the dev server.
+
+## 📊 Features
+
+- ✅ Dynamic content from centralized data service
+- ✅ Responsive design for all devices
+- ✅ Server-side rendering (SSR) for SEO
+- ✅ Smooth scroll navigation
+- ✅ Interactive contact form with email integration
+- ✅ Real project data from GitHub
+- ✅ Modern UI with animations
+- ✅ Accessibility compliant
+
+## 📫 Contact
+
+- **Email**: [rahulgsde@gmail.com](mailto:rahulgsde@gmail.com)
+- **LinkedIn**: [linkedin.com/in/rahulgsde](https://www.linkedin.com/in/rahulgsde)
+- **GitHub**: [github.com/RahulGundapaneni](https://github.com/RahulGundapaneni)
+
+## 📄 License
+
+© 2026 Rahul Gundapaneni. All rights reserved.
+

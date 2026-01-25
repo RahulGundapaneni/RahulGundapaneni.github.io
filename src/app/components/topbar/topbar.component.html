@@ -1,0 +1,22 @@
+<header class="topbar">
+  <div class="topbar-container">
+    <a href="#home" class="logo">
+      <div class="logo-icon">RG</div>
+      <div class="logo-text">
+        <span class="logo-name">Rahul Gundapaneni</span>
+        <span class="logo-subtitle">Software Engineer</span>
+      </div>
+    </a>
+    <nav class="nav">
+      @for (link of navLinks; track link.label) {
+        <a 
+          [href]="link.href" 
+          class="nav-link"
+          [class.active]="isActive(link.href)"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+  </div>
+</header>

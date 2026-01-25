@@ -3,21 +3,26 @@ import { PortfolioDataService } from '../../services/portfolio-data.service';
 import { PersonalInfo, SocialLink } from '../../models/portfolio.model';
 
 @Component({
-  selector: 'app-site-footer',
+  selector: 'app-hero',
   standalone: true,
-  imports: [],
-  templateUrl: './site-footer.component.html',
-  styleUrl: './site-footer.component.scss',
+  templateUrl: './hero.component.html',
+  styleUrl: './hero.component.scss',
 })
-export class SiteFooterComponent implements OnInit {
+export class HeroComponent implements OnInit {
   personalInfo!: PersonalInfo;
   socialLinks: SocialLink[] = [];
-  currentYear = new Date().getFullYear();
 
   constructor(private portfolioData: PortfolioDataService) {}
 
   ngOnInit(): void {
     this.personalInfo = this.portfolioData.getPersonalInfo();
     this.socialLinks = this.portfolioData.getSocialLinks();
+  }
+
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }

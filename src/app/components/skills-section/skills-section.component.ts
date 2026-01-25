@@ -1,34 +1,36 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-
-interface SkillGroup {
-  title: string;
-  items: string[];
-}
+import { Component, OnInit } from '@angular/core';
+import { PortfolioDataService } from '../../services/portfolio-data.service';
+import { Skill } from '../../models/portfolio.model';
 
 @Component({
-    selector: 'app-skills-section',
-    imports: [CommonModule],
-    templateUrl: './skills-section.component.html',
-    styleUrl: './skills-section.component.scss'
+  selector: 'app-skills-section',
+  standalone: true,
+  imports: [],
+  templateUrl: './skills-section.component.html',
+  styleUrl: './skills-section.component.scss',
 })
-export class SkillsSectionComponent {
-  groups: SkillGroup[] = [
-    {
-      title: 'Languages',
-      items: ['Java', 'Python', 'TypeScript', 'JavaScript', 'SQL', 'C', 'PHP']
-    },
-    {
-      title: 'Frameworks',
-      items: ['Spring Boot', 'Angular', 'React', 'Node.js', 'Microservices', 'Bootstrap']
-    },
-    {
-      title: 'Cloud & DevOps',
-      items: ['AWS Lambda', 'S3', 'RDS', 'Docker', 'Kubernetes', 'Jenkins', 'CI/CD']
-    },
-    {
-      title: 'Data & Tools',
-      items: ['MySQL', 'MongoDB', 'SQL Server', 'SSMS', 'GitHub', 'Bitbucket', 'Linux']
+export class SkillsSectionComponent implements OnInit {
+  languages: Skill[] = [];
+  frameworks: Skill[] = [];
+  cloudTools: Skill[] = [];
+  databases: Skill[] = [];
+
+  constructor(private portfolioData: PortfolioDataService) {}
+
+  ngOnInit(): void {
+    this.languages = this.portfolioData.getSkillsByCategory('language');
+    this.frameworks = this.portfolioData.getSkillsByCategory('framework');
+    this.cloudTools = [
+      ...this.portfolioData.getSkillsByCategory('cloud'),
+      ...this.portfolioData.getSkillsByCategory('tool'),
+    ];
+    this.databases = this.portfolioData.getSkillsByCategory('database');
+  }
+
+  scrollToProjects(): void {
+    const element = document.getElementById('projects');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  ];
+  }
 }
