@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { ThemeService } from '../../services/theme.service';
 
 interface NavLink {
   label: string;
@@ -20,7 +21,10 @@ export class TopbarComponent implements OnInit, OnDestroy {
   private sectionRatios = new Map<string, number>();
   isMenuOpen = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: object,
+    public themeService: ThemeService
+  ) {}
 
   ngOnInit() {
     if (!isPlatformBrowser(this.platformId) || typeof IntersectionObserver === 'undefined') {
@@ -38,6 +42,10 @@ export class TopbarComponent implements OnInit, OnDestroy {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 
   closeMenu() {
