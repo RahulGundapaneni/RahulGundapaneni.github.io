@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 interface NavLink {
   label: string;
@@ -18,7 +18,12 @@ export class TopbarComponent implements OnInit, OnDestroy {
   activeSection: string = 'home';
   private observer: IntersectionObserver | null = null;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
   ngOnInit() {
+    if (!isPlatformBrowser(this.platformId) || typeof IntersectionObserver === 'undefined') {
+      return;
+    }
     setTimeout(() => this.setupIntersectionObserver(), 100);
   }
 
