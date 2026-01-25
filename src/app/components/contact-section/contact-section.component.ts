@@ -12,6 +12,10 @@ import { PersonalInfo } from '../../models/portfolio.model';
 })
 export class ContactSectionComponent implements OnInit {
   personalInfo!: PersonalInfo;
+  isSubmitting = false;
+  toastVisible = false;
+  toastMessage = '';
+  toastType: 'success' | 'error' = 'success';
   formData = {
     name: '',
     email: '',
@@ -32,13 +36,50 @@ export class ContactSectionComponent implements OnInit {
     window.location.href = `mailto:${this.personalInfo.email}?subject=${subject}&body=${body}`;
   }
 
-  onSubmit(): void {
-    if (this.formData.name && this.formData.email && this.formData.message) {
-      const subject = encodeURIComponent('Portfolio Contact: ' + this.formData.name);
-      const body = encodeURIComponent(
-        `Name: ${this.formData.name}\nEmail: ${this.formData.email}\n\nMessage:\n${this.formData.message}`
-      );
-      window.location.href = `mailto:${this.personalInfo.email}?subject=${subject}&body=${body}`;
+  async onSubmit(event: Event): Promise<void> {
+    event.preventDefault();
+    if (this.isSubmitting) {
+      return;
     }
+    if (!this.formData.name || !this.formData.email || !this.formData.message) {
+      this.showToast('Please fill out all fields.', 'error');
+      return;
+    }
+
+    this.isSubmitting = true;
+    try {
+      const response = await fetch('https://formspree.io/f/xrepwbrp', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: this.formData.name,
+          email: this.formData.email,
+          message: this.formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submit failed');
+      }
+
+      this.formData = { name: '', email: '', message: '' };
+      this.showToast('Thanks! Your message has been sent.', 'success');
+    } catch (error) {
+      this.showToast('Something went wrong. Please try again.', 'error');
+    } finally {
+      this.isSubmitting = false;
+    }
+  }
+
+  private showToast(message: string, type: 'success' | 'error'): void {
+    this.toastMessage = message;
+    this.toastType = type;
+    this.toastVisible = true;
+    window.setTimeout(() => {
+      this.toastVisible = false;
+    }, 4000);
   }
 }
