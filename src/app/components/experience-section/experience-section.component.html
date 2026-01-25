@@ -1,26 +1,48 @@
-<section id="experience" class="section">
-  <div class="container">
-    <div class="section-header reveal" style="--delay: 0s;">
-      <p class="eyebrow">Experience</p>
-      <h2>Delivering measurable impact in fintech and higher education</h2>
+<section id="experience" class="experience">
+  <div class="experience-container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">Experience</h2>
       <p class="section-subtitle">
-        End-to-end ownership of platforms that accelerate onboarding, detect fraud, and modernize mission-critical
-        systems.
+        Career milestones and impact
       </p>
     </div>
-    <div class="timeline">
-      <article class="timeline-card reveal" *ngFor="let item of experiences; let i = index" [style.--delay]="(i + 1) * 0.1 + 's'">
-        <div class="timeline-header">
-          <div>
-            <h3>{{ item.role }}</h3>
-            <p class="timeline-meta">{{ item.company }} - {{ item.location }}</p>
+
+    <div class="experience-grid">
+      @for (exp of experiences; track exp.company; let i = $index) {
+        <div class="experience-card glass-card fade-in" [style.animation-delay]="(i * 0.1) + 's'">
+          <div class="card-top">
+            <div class="company-tag">
+              @if (exp.logoUrl) {
+                <img [src]="exp.logoUrl" [alt]="exp.company" class="company-logo" />
+              } @else if (exp.icon) {
+                <span class="company-icon">{{ exp.icon }}</span>
+              }
+              {{ exp.company }}
+            </div>
+            <span class="period-badge">{{ exp.period }}</span>
           </div>
-          <span class="timeline-period">{{ item.period }}</span>
+          
+          <h3 class="role-title">{{ exp.role }}</h3>
+          <p class="location">📍 {{ exp.location }}</p>
+          
+          <p class="description">{{ exp.description }}</p>
+          
+          <div class="achievements-highlight">
+            @for (achievement of exp.achievements.slice(0, 2); track achievement) {
+              <div class="achievement-item">
+                <span class="achievement-icon">▸</span>
+                <span class="achievement-text">{{ achievement }}</span>
+              </div>
+            }
+          </div>
+          
+          <div class="tech-stack">
+            @for (tech of exp.technologies; track tech) {
+              <span class="tech-tag">{{ tech }}</span>
+            }
+          </div>
         </div>
-        <ul>
-          <li *ngFor="let highlight of item.highlights">{{ highlight }}</li>
-        </ul>
-      </article>
+      }
     </div>
   </div>
 </section>

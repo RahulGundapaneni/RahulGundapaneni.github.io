@@ -1,26 +1,33 @@
 import { Component } from '@angular/core';
-import { ContactSectionComponent } from './components/contact-section/contact-section.component';
-import { EducationSectionComponent } from './components/education-section/education-section.component';
-import { ExperienceSectionComponent } from './components/experience-section/experience-section.component';
-import { HeroSectionComponent } from './components/hero-section/hero-section.component';
-import { ProjectsSectionComponent } from './components/projects-section/projects-section.component';
-import { SiteFooterComponent } from './components/site-footer/site-footer.component';
-import { SiteHeaderComponent } from './components/site-header/site-header.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
+import { HeroComponent } from './components/hero/hero.component';
 import { SkillsSectionComponent } from './components/skills-section/skills-section.component';
+import { ExperienceSectionComponent } from './components/experience-section/experience-section.component';
+import { ProjectsSectionComponent } from './components/projects-section/projects-section.component';
+import { ContactSectionComponent } from './components/contact-section/contact-section.component';
+import { SiteFooterComponent } from './components/site-footer/site-footer.component';
 
 @Component({
-    selector: 'app-root',
-    imports: [
-        SiteHeaderComponent,
-        HeroSectionComponent,
-        ExperienceSectionComponent,
-        ProjectsSectionComponent,
-        SkillsSectionComponent,
-        EducationSectionComponent,
-        ContactSectionComponent,
-        SiteFooterComponent
-    ],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    TopbarComponent,
+    HeroComponent,
+    SkillsSectionComponent,
+    ExperienceSectionComponent,
+    ProjectsSectionComponent,
+    ContactSectionComponent,
+    SiteFooterComponent,
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  navLinks = [
+    { label: 'Home', href: '#home' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Contact', href: '#contact' },
+  ];
+}
