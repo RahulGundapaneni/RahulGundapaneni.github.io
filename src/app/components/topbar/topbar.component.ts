@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, Inject, PLATFORM_ID, HostListener } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
 
@@ -56,6 +56,13 @@ export class TopbarComponent implements OnInit, OnDestroy {
     const sectionId = href.replace('#', '');
     this.activeSection = sectionId || 'home';
     this.closeMenu();
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    if (this.isMenuOpen) {
+      this.closeMenu();
+    }
   }
 
   private getSectionFromHash(): string | null {
