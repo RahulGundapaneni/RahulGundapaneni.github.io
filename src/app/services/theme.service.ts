@@ -25,9 +25,8 @@ export class ThemeService {
     if (savedTheme) {
       this.theme.set(savedTheme);
     } else {
-      // Check system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      this.theme.set(prefersDark ? 'dark' : 'light');
+      // Default to dark on first launch
+      this.theme.set('dark');
     }
 
     this.applyTheme(this.theme());
