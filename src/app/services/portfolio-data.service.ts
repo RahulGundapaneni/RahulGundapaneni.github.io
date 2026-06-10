@@ -48,68 +48,71 @@ export class PortfolioDataService {
   private experiences: Experience[] = [
     {
       company: 'Citizens Financial Group',
-      role: 'Senior Software Engineer',
-      period: '2023 - Present',
-      location: 'Johnston, RI',
+      role: 'Software Development Engineer',
+      period: 'January 2023 - Present',
+      location: 'Dallas, TX',
       description:
-        'Transformed credit card onboarding from multi-day slog to minutes-long win. Built secure, fraud-resistant platforms that cut processing time by 75% and boosted approval accuracy by 20%.',
+        'Engineered a credit card origination platform with Java Spring Boot microservices, cutting processing time by 75% and enabling seamless customer onboarding. Built a fraud detection dashboard and integrated Accertify, Experian, ThreatMetrix, and TSYS APIs to automate credit, fraud, and issuance workflows.',
       achievements: [
-        'Architected micro-frontend ecosystems with Angular + Spring Boot (50% faster deployments)',
-        'Engineered fraud detection dashboard that cut fraudulent apps by 25% and improved retention 30%',
+        'Built reusable Angular micro-frontend components with TypeScript, HTML5, and CSS3, cutting frontend build times by 30%',
+        'Delivered secure full-stack apps with Angular, Node.js, and Okta OAuth2, boosting user engagement by 40%',
+        'Designed a fraud detection dashboard that reduced fraudulent applications by 25%',
+        'Migrated legacy systems to AWS (Lambda, S3, RDS) and containerized services with Docker/Kubernetes, cutting hosting costs by 85%',
+        'Automated compliance workflows with SEFAS and built CI/CD pipelines via Jenkins, ensuring 100% regulatory compliance',
       ],
       technologies: [
         'Angular',
         'Spring Boot',
+        'Node.js',
+        'Okta OAuth2',
         'AWS (Lambda, S3, RDS)',
         'Docker/Kubernetes',
-        'PostgreSQL',
+        'Jenkins/CI-CD',
       ],
       icon: '🏦',
       logoUrl: 'assets/logos/citizens-bank.svg',
     },
     {
-      company: 'Morgan Stanley',
-      role: 'Full-Stack Engineer',
-      period: '2020 - 2021',
-      location: 'New York, NY',
-      description:
-        'Built analytics tools that made complex risk data digestible for 50+ analysts. Raised efficiency 20% and cut incident resolution times by 30-40% through intelligent data pipelines.',
-      achievements: [
-        'Designed real-time risk monitoring systems for institutional portfolios',
-        'Optimized query performance lifting analyst productivity across trading desks',
-      ],
-      technologies: [
-        'Python',
-        'Node.js',
-        'React',
-        'SQL Server',
-        'AWS',
-        'Data Pipelines',
-      ],
-      icon: '📊',
-      logoUrl: 'assets/logos/morgan-stanley.png',
-    },
-    {
       company: 'University of Texas at Arlington',
       role: 'Software Engineer',
-      period: '2021 - 2022',
+      period: 'December 2021 - December 2022',
       location: 'Arlington, TX',
       description:
-        'Delivered platforms serving 10K+ students with 40% faster queries and 30% enrollment growth. Built a check-in app that halved errors and grew team proficiency 70% through training.',
+        'Developed full-stack modules for the CEMS Portal using Java, Angular, TypeScript, and SQL, enabling course management for 10,000+ students and driving a 30% enrollment increase.',
       achievements: [
-        'Created Campus Event Management System handling 5,000+ daily users seamlessly',
-        'Engineered mobile check-in system reducing data entry errors by 50%',
+        'Built responsive HTML5/CSS3 and Angular UI components for student-facing workflows, reducing support tickets by 20%',
+        'Optimized 50+ SQL stored procedures and tables in SSMS, improving data retrieval speed by 40% and cutting downtime by 25%',
+        'Mentored junior developers through SQL Server training sessions, accelerating onboarding for new engineers',
       ],
       technologies: [
         'Java',
         'Angular',
-        'MySQL',
-        'AWS',
-        'REST APIs',
-        'Mobile Development',
+        'TypeScript',
+        'SQL Server (SSMS)',
+        'HTML5/CSS3',
       ],
       icon: '🎓',
       logoUrl: 'assets/logos/uta.png',
+    },
+    {
+      company: 'Morgan Stanley',
+      role: 'Software Engineer',
+      period: 'August 2020 - August 2021',
+      location: 'Bangalore, India',
+      description:
+        'Maintained 99.9% uptime for Risk1 trading applications supporting global front-office teams, resolving critical production incidents with zero business-hour downtime breaches.',
+      achievements: [
+        'Reduced repeat incidents by 30% by leading root cause analysis and implementing permanent fixes',
+        'Built automated monitoring pipelines for metrics, logs, and alerts, improving defect detection efficiency by 40%',
+      ],
+      technologies: [
+        'Java',
+        'SQL',
+        'Monitoring & Alerting',
+        'Agile/Scrum',
+      ],
+      icon: '📊',
+      logoUrl: 'assets/logos/morgan-stanley.png',
     },
   ];
 
@@ -213,18 +216,21 @@ export class PortfolioDataService {
     { name: 'Spring Boot', category: 'framework', proficiency: 'expert', level: 94, iconUrl: 'assets/skill-icons/springboot.svg' },
     { name: 'Node.js', category: 'framework', proficiency: 'advanced', level: 86, iconUrl: 'assets/skill-icons/nodejs.svg' },
 
-    // Cloud & DevOps (4)
+    // Cloud & DevOps (6)
     { name: 'AWS', category: 'cloud', proficiency: 'expert', level: 91, iconUrl: 'assets/skill-icons/aws.svg' },
     { name: 'Docker', category: 'cloud', proficiency: 'advanced', level: 88, iconUrl: 'assets/skill-icons/docker.svg' },
     { name: 'Kubernetes', category: 'cloud', proficiency: 'advanced', level: 84, iconUrl: 'assets/skill-icons/kubernetes.svg' },
     { name: 'CI/CD', category: 'cloud', proficiency: 'expert', level: 90, iconUrl: 'assets/skill-icons/cicd.svg' },
+    { name: 'Terraform', category: 'cloud', proficiency: 'advanced', level: 80, iconUrl: 'https://cdn.simpleicons.org/terraform/844FBA' },
+    { name: 'GCP', category: 'cloud', proficiency: 'intermediate', level: 70, iconUrl: 'https://cdn.simpleicons.org/googlecloud/4285F4' },
 
-    // Databases (5)
+    // Databases & Messaging (6)
     { name: 'PostgreSQL', category: 'database', proficiency: 'expert', level: 92, iconUrl: 'assets/skill-icons/postgresql.svg' },
     { name: 'MySQL', category: 'database', proficiency: 'expert', level: 90, iconUrl: 'assets/skill-icons/mysql.svg' },
     { name: 'SQL Server', category: 'database', proficiency: 'expert', level: 89, iconUrl: 'assets/skill-icons/sqlserver.svg' },
     { name: 'MongoDB', category: 'database', proficiency: 'advanced', level: 85, iconUrl: 'assets/skill-icons/mongodb.svg' },
     { name: 'Redis', category: 'database', proficiency: 'advanced', level: 83, iconUrl: 'assets/skill-icons/redis.svg' },
+    { name: 'Apache Kafka', category: 'database', proficiency: 'advanced', level: 78, iconUrl: 'https://cdn.simpleicons.org/apachekafka/231F20' },
   ];
 
   private certifications: Certification[] = [
