@@ -81,7 +81,7 @@ Visit `http://localhost:4200/` for the dev server.
 
 ## 📫 Contact
 
-- **Email**: [rahulgsde@gmail.com](mailto:rahulgsde@gmail.com)
+- **Email**: [rahulgundapaneni9@gmail.com](mailto:rahulgundapaneni9@gmail.com)
 - **LinkedIn**: [linkedin.com/in/rahulgsde](https://www.linkedin.com/in/rahulgsde)
 - **GitHub**: [github.com/RahulGundapaneni](https://github.com/RahulGundapaneni)
 
