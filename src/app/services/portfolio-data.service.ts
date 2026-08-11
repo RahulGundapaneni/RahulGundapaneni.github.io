@@ -18,7 +18,7 @@ export class PortfolioDataService {
     subtitle: 'Full Stack Developer | Cloud Architecture | System Design',
     bio: 'Full-stack engineer passionate about building scalable systems and elegant solutions. I specialize in backend architecture with Java and Spring, modern frontend development with Angular and React, and cloud deployments. Always learning, always building.',
     location: 'Dallas, Texas, United States',
-    email: 'rahulgsde@gmail.com',
+    email: 'rahulgundapaneni9@gmail.com',
     avatar: 'RG',
     yearsOfExperience: 8,
     projectsCompleted: 30,
@@ -39,7 +39,7 @@ export class PortfolioDataService {
     },
     {
       platform: 'Email',
-      url: 'mailto:rahulgsde@gmail.com',
+      url: 'mailto:rahulgundapaneni9@gmail.com',
       icon: 'email',
       label: '@',
     },

@@ -17,7 +17,7 @@ I've completely redesigned your Angular portfolio website with **real data** fro
 - **Name**: Rahul Gundapaneni
 - **Title**: Senior Software Engineer  
 - **Location**: Dallas, Texas, United States
-- **Email**: rahulgsde@gmail.com
+- **Email**: rahulgundapaneni9@gmail.com
 - **Experience**: 8+ years
 - **Projects**: 30+ delivered
 
@@ -134,7 +134,7 @@ Added new SCSS classes:
 
 - **GitHub**: https://github.com/RahulGundapaneni
 - **LinkedIn**: https://www.linkedin.com/in/rahulgsde
-- **Email**: rahulgsde@gmail.com
+- **Email**: rahulgundapaneni9@gmail.com
 
 ## 🚀 Next Steps
 
